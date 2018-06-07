@@ -2,19 +2,23 @@
 
 console.log('App.js is running!');
 
-// JSX - JavaScript XML
-var template = React.createElement(
+var appobject = {
+  title: 'First React App',
+  subtitle: 'Babel Compilation'
+
+  // JSX - JavaScript XML
+};var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Indecision App'
+    appobject.title
   ),
   React.createElement(
-    'p',
+    'h2',
     null,
-    'This is some info'
+    appobject.subtitle
   ),
   React.createElement(
     'ol',
@@ -34,33 +38,16 @@ var template = React.createElement(
 
 var user = {
   name: 'Jagadish',
-  age: 49,
-  location: 'Mountain House'
+  age: 49
 };
 
-var userName = 'Jagadish';
-var userAge = 49;
-var userLocation = 'Mountain House';
-
-var templateNoObject = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    userName
-  ),
-  React.createElement(
-    'p',
-    null,
-    userAge
-  ),
-  React.createElement(
-    'p',
-    null,
-    userLocation
-  )
-);
+function getlocation(location) {
+  if (location) {
+    return location;
+  } else {
+    return 'unknown';
+  }
+}
 
 var templateTwo = React.createElement(
   'div',
@@ -80,7 +67,7 @@ var templateTwo = React.createElement(
     'p',
     null,
     'Location: ',
-    user.location
+    getlocation(user.location)
   )
 );
 var appRoot = document.getElementById('app');
