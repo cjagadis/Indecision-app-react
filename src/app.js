@@ -2,14 +2,16 @@ console.log('App.js is running!')
 
 var appobject = {
   title: 'First React App',
-  subtitle: 'Babel Compilation'
+  subtitle: 'Babel Compilation',
+  options: ['One','Two']
 }
 
 // JSX - JavaScript XML
 var template = (
   <div>
     <h1>{appobject.title}</h1>
-    <h2>{appobject.subtitle}</h2>
+    {appobject.subtitle && <h2>{appobject.subtitle}</h2>}
+    <p>{(appobject.options.length > 0) ? 'Here are your options' : 'No Options'}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -39,4 +41,4 @@ var templateTwo = (
 )
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)

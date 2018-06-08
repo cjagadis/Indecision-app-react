@@ -4,7 +4,8 @@ console.log('App.js is running!');
 
 var appobject = {
   title: 'First React App',
-  subtitle: 'Babel Compilation'
+  subtitle: 'Babel Compilation',
+  options: ['One', 'Two']
 
   // JSX - JavaScript XML
 };var template = React.createElement(
@@ -15,10 +16,15 @@ var appobject = {
     null,
     appobject.title
   ),
-  React.createElement(
+  appobject.subtitle && React.createElement(
     'h2',
     null,
     appobject.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    appobject.options.length > 0 ? 'Here are your options' : 'No Options'
   ),
   React.createElement(
     'ol',
@@ -72,4 +78,4 @@ var templateTwo = React.createElement(
 );
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
