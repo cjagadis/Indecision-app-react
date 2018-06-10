@@ -1,13 +1,13 @@
 console.log('App.js is running!')
 
-var appobject = {
+const appobject = {
   title: 'First React App',
   subtitle: 'Babel Compilation',
   options: ['One','Two']
 }
 
 // JSX - JavaScript XML
-var template = (
+const template = (
   <div>
     <h1>{appobject.title}</h1>
     {appobject.subtitle && <h2>{appobject.subtitle}</h2>}
@@ -19,7 +19,7 @@ var template = (
   </div>
 )
 
-var user = {
+const user = {
   name: 'Jagadish',
   age: 34,
   location: 'Mountain House'
@@ -31,7 +31,7 @@ function getlocation (location) {
   }
 }
 
-var templateTwo = (
+const templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {false}
@@ -39,6 +39,6 @@ var templateTwo = (
     {getlocation(user.location)}
   </div>
 )
-var appRoot = document.getElementById('app')
+const appRoot = document.getElementById('app')
 
 ReactDOM.render(template, appRoot)

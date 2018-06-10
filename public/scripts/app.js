@@ -1,81 +1,37 @@
 'use strict';
 
-console.log('App.js is running!');
-
-var appobject = {
-  title: 'First React App',
-  subtitle: 'Babel Compilation',
-  options: ['One', 'Two']
-
-  // JSX - JavaScript XML
-};var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    appobject.title
-  ),
-  appobject.subtitle && React.createElement(
-    'h2',
-    null,
-    appobject.subtitle
-  ),
-  React.createElement(
-    'p',
-    null,
-    appobject.options.length > 0 ? 'Here are your options' : 'No Options'
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'Item one'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'Item two'
-    )
-  )
-);
-
-var user = {
-  name: 'Jagadish',
-  age: 34,
-  location: 'Mountain House'
+var square = function square(x) {
+  return x * x;
 };
 
-function getlocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'location: ',
-      location
-    );
-  }
+console.log(square(3));
+
+// const squareArrow = (x) => {
+//  return x * x
+// }
+
+var squareArrow = function squareArrow(x) {
+  return x * x;
+};
+
+console.log(squareArrow(5));
+
+var fullName = 'Channagiri Jagadish';
+var firstName = void 0;
+
+if (fullName) {
+  firstName = fullName.split(' ')[0];
+  console.log(firstName);
 }
 
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name ? user.name : 'Anonymous'
-  ),
-  false,
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    'Age: ',
-    user.age
-  ),
-  getlocation(user.location)
-);
-var appRoot = document.getElementById('app');
+var getFirstName1 = function getFirstName1(fullName) {
+  return fullName.split(' ')[0];
+};
 
-ReactDOM.render(template, appRoot);
+console.log(getFirstName1('Albert Einstein'));
+
+var getFirstName2 = function getFirstName2(fullName) {
+  return fullName.split(' ')[0];
+};
+
+console.log(getFirstName2('Richard Feynman'));
