@@ -3,7 +3,7 @@ console.log('App.js is running!')
 const appobject = {
   title: 'First React App',
   subtitle: 'Babel Compilation',
-  options: ['One','Two']
+  options: ['One', 'Two']
 }
 
 // JSX - JavaScript XML
@@ -39,6 +39,62 @@ const templateTwo = (
     {getlocation(user.location)}
   </div>
 )
+
+// let count = 0
+
+const templateThree = (
+  <div>
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+  </div>
+)
+// console.log(templateThree)
+// const appRoot = document.getElementById('app')
+// ReactDOM.render(templateThree, appRoot)
+
+// register the function with the button
+// normally this is not done
+// we follow the convention in templateThree
+const template4 = (
+  <div>
+    <h1>Count: {count}</h1>
+    <button onClick={() => {
+      console.log('some value here')
+    }}>+1</button>
+  </div>
+)
+// console.log(template4)
+// const appRoot = document.getElementById('app')
+
+// ReactDOM.render(template4, appRoot)
+
+let count = 0
+
+const addOne = () => {
+  count++
+  renderCounterApp()
+}
+const minusOne = () => {
+  count--
+  renderCounterApp()
+}
+const resetBt = () => {
+  count = 0
+  renderCounterApp()
+}
+
 const appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+const renderCounterApp = () => {
+  const template5 = (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={resetBt}>reset</button>
+    </div>
+  )
+  ReactDOM.render(template5, appRoot)
+}
+
+renderCounterApp()
