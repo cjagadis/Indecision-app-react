@@ -26,6 +26,8 @@ var removeAll = function removeAll() {
   renderForm();
 };
 
+var numbers = [99, 98, 97];
+
 var renderForm = function renderForm() {
   var template = React.createElement(
     'div',
@@ -58,16 +60,13 @@ var renderForm = function renderForm() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item two'
-      )
+      appobject.options.map(function (item) {
+        return React.createElement(
+          'li',
+          { key: item },
+          item
+        );
+      })
     ),
     React.createElement(
       'form',

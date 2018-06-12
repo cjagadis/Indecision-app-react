@@ -24,6 +24,8 @@ const removeAll = () => {
   renderForm()
 }
 
+const numbers = [99, 98, 97]
+
 const renderForm = () => {
   const template = (
     <div>
@@ -33,8 +35,11 @@ const renderForm = () => {
       <p>{appobject.options.length}</p>
       <button onClick={removeAll}>removeAll</button>
       <ol>
-        <li>Item one</li>
-        <li>Item two</li>
+        {
+          appobject.options.map((item) => {
+            return <li key={item}>{item}</li>
+          })
+        }
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type='text' name='option' />
