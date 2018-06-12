@@ -24,6 +24,12 @@ const removeAll = () => {
   renderForm()
 }
 
+const onMakeDecision = () => {
+  const randomNumber = Math.floor(Math.random() * appobject.options.length)
+  const option = appobject.options[randomNumber]
+  alert(option)
+}
+
 const numbers = [99, 98, 97]
 
 const renderForm = () => {
@@ -32,7 +38,7 @@ const renderForm = () => {
       <h1>{appobject.title}</h1>
       {appobject.subtitle && <h2>{appobject.subtitle}</h2>}
       <p>{appobject.options.length > 0 ? 'Here are your options' : 'No Options'}</p>
-      <p>{appobject.options.length}</p>
+      <button disabled={appobject.options.length === 0} onClick={onMakeDecision}>What Should I do?</button>
       <button onClick={removeAll}>removeAll</button>
       <ol>
         {
